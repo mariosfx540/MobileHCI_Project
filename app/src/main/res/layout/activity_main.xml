@@ -86,8 +86,8 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/button8"
         android:layout_alignBottom="@+id/button8"
-        android:layout_alignLeft="@+id/button9"
-        android:layout_alignStart="@+id/button9"
+        android:layout_alignLeft="@+id/voiceInput"
+        android:layout_alignStart="@+id/voiceInput"
         android:text="Group F"
         tools:layout_editor_absoluteX="245dp"
         tools:layout_editor_absoluteY="307dp" />
@@ -96,22 +96,45 @@
         android:id="@+id/button8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button9"
-        android:layout_alignEnd="@+id/button9"
-        android:layout_alignRight="@+id/button9"
+        android:layout_above="@+id/voiceInput"
+        android:layout_alignEnd="@+id/voiceInput"
+        android:layout_alignRight="@+id/voiceInput"
         android:layout_marginBottom="48dp"
         android:text="Group K"
         tools:layout_editor_absoluteX="245dp"
         tools:layout_editor_absoluteY="410dp" />
 
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="262dp"
+    <TextView
+        android:id="@+id/voiceInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:textSize="26sp"
+        android:textStyle="normal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="TRANSLATE TO RUSSIAN"
-        tools:layout_editor_absoluteX="71dp"
-        tools:layout_editor_absoluteY="523dp" />
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <TextView
+            android:clickable="true"
+            android:gravity="center"
+            android:padding="16dp"
+            android:textColor="@color/colorAccent"
+            android:background="@color/colorPrimary"
+            android:id="@+id/btnSpeak"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Tap to Open Mic"
+            android:textSize="22sp"
+            android:textStyle="normal" />
+    </LinearLayout>
 
 </RelativeLayout>
