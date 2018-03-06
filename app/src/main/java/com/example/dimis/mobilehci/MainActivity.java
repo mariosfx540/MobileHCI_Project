@@ -1,5 +1,6 @@
 package com.example.dimis.mobilehci;
 
+import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.ActionBar;
@@ -14,6 +15,7 @@ import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -21,6 +23,7 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
+    Dialog mDialog;
 
     private TextView voiceInput;
     private TextView speakButton;
@@ -40,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
                 askSpeechInput();
             }
         });
+
+        mDialog = new Dialog(this);
 
     }
     private void askSpeechInput() {
@@ -80,5 +85,23 @@ public class MainActivity extends AppCompatActivity {
             }
 
         }
+    }
+
+    public void ShowPopUp(View v){
+
+        TextView txtClose;
+        Button rusBtn;
+        mDialog.setContentView(R.layout.custom_popup);
+        txtClose = (TextView) mDialog.findViewById(R.id.txtClose);
+        rusBtn = (Button) mDialog.findViewById(R.id.rusBtn);
+        txtClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mDialog.dismiss();
+            }
+        });
+
+        mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        mDialog.show();
     }
 }
