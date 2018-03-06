@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">MobileHCI</string>
+    <string name="app_name">Munidal Translator</string>
+    <string name="trlToRuss">Translate To Russian</string>
+    <string name="groupA">Group A</string>
 </resources>
