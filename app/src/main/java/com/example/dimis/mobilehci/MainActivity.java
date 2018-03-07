@@ -94,6 +94,13 @@ public class MainActivity extends AppCompatActivity {
         mDialog.setContentView(R.layout.custom_popup);
         txtClose = (TextView) mDialog.findViewById(R.id.txtClose);
         rusBtn = (Button) mDialog.findViewById(R.id.rusBtn);
+        rusBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, TeamsActivity.class);
+                startActivity(intent);
+            }
+        });
         txtClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
