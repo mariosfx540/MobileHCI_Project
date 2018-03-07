@@ -1,5 +1,8 @@
 package com.example.dimis.mobilehci;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
