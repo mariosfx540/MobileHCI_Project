@@ -1,58 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-               android:layout_height="match_parent"
-    android:gravity="top">
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top"
+    android:orientation="vertical">
 
 
     <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:textSize="30dp"-->
-        <!--android:text="HELLOOO TAB 1"-->
-        <!--android:textStyle="bold"-->
-        <!--android:layout_gravity="left"-->
-        <!--android:gravity="left"/>-->
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/primary_text"
-        android:textSize="30dp"
-        android:text="Original     Translated"
-        android:textStyle="bold|italic"
-        android:gravity="center"/>
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:textSize="30dp"-->
+    <!--android:text="HELLOOO TAB 1"-->
+    <!--android:textStyle="bold"-->
+    <!--android:layout_gravity="left"-->
+    <!--android:gravity="left"/>-->
 
 
-    <TextView
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/primary_text"
-        android:textSize="20dp"
-        android:text="Hello		 Здравствуйте"
-        android:gravity="center"/>
-    <TextView
-        android:layout_width="match_parent"
+        android:layout_marginTop="0dp"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/russians"/>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/primary_text"
-        android:textSize="20dp"
-        android:text="Thank you        Спасибо"
-        android:gravity="center"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/primary_text"
-        android:textSize="20dp"
-        android:text="Good Morning доброе утро"
-        android:gravity="center"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/primary_text"
-        android:textSize="20dp"
-        android:text="Good Night      доброй ночи"
-        android:gravity="center"/>
+        android:layout_marginBottom="50dp"
+        android:background="@color/primary_dark"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="@string/trlToRuss"
+        android:textColor="#FFFF"
+        android:textSize="22sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
 
 
-</LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>
