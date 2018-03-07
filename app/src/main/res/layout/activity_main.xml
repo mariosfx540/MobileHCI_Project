@@ -3,23 +3,45 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+                android:id="@+id/relative"
+                android:layout_width="match_parent"
     android:layout_height="match_parent"
                 android:background="@drawable/background"
     tools:context="com.example.dimis.mobilehci.MainActivity">
 
-    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/icons"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:text="Choose your team's group"
+            android:layout_gravity="center"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button4"
-        android:layout_alignBottom="@+id/button4"
+        android:layout_alignBaseline="@+id/groupA"
+        android:layout_alignBottom="@+id/groupA"
         android:layout_alignLeft="@+id/button3"
         android:layout_alignStart="@+id/button3"
+        android:background="@color/icons"
         android:text="Group B"
         tools:layout_editor_absoluteX="63dp"
-        tools:layout_editor_absoluteY="107dp" />
+        tools:layout_editor_absoluteY="107dp"/>
 
     <Button
         android:id="@+id/button2"
@@ -27,12 +49,13 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/button3"
         android:layout_alignBottom="@+id/button3"
-        android:layout_alignLeft="@+id/button4"
-        android:layout_alignStart="@+id/button4"
+        android:layout_alignLeft="@+id/groupA"
+        android:layout_alignStart="@+id/groupA"
+        android:background="@color/icons"
         android:text="Group C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="107dp" />
+        tools:layout_editor_absoluteY="107dp"/>
 
     <Button
         android:id="@+id/button3"
@@ -40,23 +63,26 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/button5"
         android:layout_alignStart="@+id/button5"
-        android:layout_below="@+id/button4"
+        android:layout_below="@+id/groupA"
         android:layout_marginTop="35dp"
+        android:background="@color/icons"
         android:text="Group D"
         tools:layout_editor_absoluteX="63dp"
-        tools:layout_editor_absoluteY="208dp" />
+        tools:layout_editor_absoluteY="208dp"/>
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/groupA"
+        android:onClick="ShowPopUp"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button6"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/button6"
-        android:layout_marginTop="81dp"
+        android:layout_alignBottom="@+id/voiceInput"
+        android:layout_alignLeft="@+id/button8"
+        android:layout_alignStart="@+id/button8"
+        android:background="@color/icons"
         android:text="@string/groupA"
         tools:layout_editor_absoluteX="245dp"
-        tools:layout_editor_absoluteY="208dp" />
+        tools:layout_editor_absoluteY="208dp"/>
 
     <Button
         android:id="@+id/button5"
@@ -66,6 +92,7 @@
         android:layout_alignBottom="@+id/button6"
         android:layout_alignLeft="@+id/button7"
         android:layout_alignStart="@+id/button7"
+        android:background="@color/icons"
         android:text="Group F"
         tools:layout_editor_absoluteX="63dp"
         tools:layout_editor_absoluteY="307dp"/>
@@ -74,10 +101,11 @@
         android:id="@+id/button6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button8"
-        android:layout_alignStart="@+id/button8"
+        android:layout_alignLeft="@+id/button2"
+        android:layout_alignStart="@+id/button2"
         android:layout_below="@+id/button2"
-        android:layout_marginTop="51dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/icons"
         android:text="Group E"
         tools:layout_editor_absoluteX="63dp"
         tools:layout_editor_absoluteY="410dp"/>
@@ -88,10 +116,11 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/button8"
         android:layout_alignBottom="@+id/button8"
-        android:layout_marginLeft="43dp"
-        android:layout_marginStart="43dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
         android:layout_toEndOf="@+id/voiceInput"
         android:layout_toRightOf="@+id/voiceInput"
+        android:background="@color/icons"
         android:text="Group H"
         tools:layout_editor_absoluteX="245dp"
         tools:layout_editor_absoluteY="307dp"/>
@@ -101,11 +130,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button6"
-        android:layout_marginEnd="23dp"
-        android:layout_marginRight="23dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginRight="49dp"
+        android:layout_marginTop="50dp"
         android:layout_toLeftOf="@+id/button7"
         android:layout_toStartOf="@+id/button7"
+        android:background="@color/icons"
         android:text="Group G"
         tools:layout_editor_absoluteX="245dp"
         tools:layout_editor_absoluteY="410dp"/>
@@ -129,18 +159,18 @@
         android:orientation="vertical" >
 
         <TextView
+            android:id="@+id/btnSpeak"
+            android:layout_width="398dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#212121"
+            android:background="@color/icons"
             android:clickable="true"
             android:gravity="center"
             android:padding="16dp"
-            android:textColor="@color/colorAccent"
-            android:background="@color/colorPrimary"
-            android:id="@+id/btnSpeak"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Tap to Open Mic"
+            android:text="Translate to Russian"
             android:textSize="22sp"
-            android:textStyle="normal" />
+            android:textStyle="normal"/>
     </LinearLayout>
 
 </RelativeLayout>
