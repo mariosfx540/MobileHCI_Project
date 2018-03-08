@@ -47,29 +47,7 @@ public class TranslationAPI extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                new  AsyncTask<Void,Void,Void>(){
-                    @Override
-                    protected Void doInBackground(Void... params) {
-                        TranslateOptions options = TranslateOptions.newBuilder().setApiKey(API_KEY).build();
-                        Translate translate = options.getService();
-
-
-                        final Translation translation = translate.translate(InputText.getText().toString(),Translate.TranslateOption.targetLanguage("ru"));
-                        textViewHandler.post(new Runnable(){
-                            @Override
-                            public void run() {
-
-                                    Log.d("Result","Text: %s%n"+ translation.getTranslatedText());
-                                    Log.d("Translation: %s%n", translation.getTranslatedText());
-
-
-                            }
-                        });
-        return null;
-                    }
-
-                }.execute();
-
+                Translate(InputText.getText().toString(),textViewHandler);
 
 
 
@@ -114,5 +92,34 @@ public class TranslationAPI extends AppCompatActivity {
 
         }
     }
+    public static void Translate(final String text,final Handler textViewHandler){
+        new  AsyncTask<Void,Void,Void>(){
+            @Override
+            protected Void doInBackground(Void... params) {
+                TranslateOptions options = TranslateOptions.newBuilder().setApiKey(API_KEY).build();
+                Translate translate = options.getService();
 
+
+                final Translation translation = translate.translate(text,Translate.TranslateOption.targetLanguage("ru"));
+                textViewHandler.post(new Runnable(){
+                    @Override
+                    public void run() {
+
+                        Log.d("Result","Text: %s%n"+ translation.getTranslatedText());
+                        Log.d("Translation: %s%n", translation.getTranslatedText());
+
+
+                    }
+                });
+                return null;
+            }
+
+        }.execute();
+
+
+
+
+    }
 }
+
+

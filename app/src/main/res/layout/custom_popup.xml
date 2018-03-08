@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="250dp"
+    android:layout_height="275dp"
+    android:background="@color/accent"
+    android:padding="5dp"
+    android:layout_gravity="center">
+
+    <TextView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/txtClose"
+        android:textColor="@color/icons"
+        android:text="X"
+        android:textStyle="bold"
+        android:layout_gravity="end"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textColor="@color/icons"
+        android:text="Choose your Country"
+        android:textStyle="bold"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/accent"
+        android:padding="5dp">
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/primary_dark"
+        android:text="FRANCE"
+        android:textColor="@color/icons"/>
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/primary_dark"
+            android:text="GREECE"
+            android:textColor="@color/icons"
+            android:layout_marginEnd="10dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="35dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/accent"
+        android:padding="5dp">
+
+        <Button
+            android:id="@+id/rusBtn"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/primary_dark"
+            android:text="RUSSIA"
+            android:textColor="@color/icons"/>
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/primary_dark"
+            android:text="CYPRUS"
+            android:textColor="@color/icons"
+            android:layout_marginEnd="10dp"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
