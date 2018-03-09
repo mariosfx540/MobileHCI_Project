@@ -55,6 +55,7 @@ public class TranslationAPI extends AppCompatActivity implements TextToSpeech.On
         InputText = (EditText)findViewById(R.id.editText);
         buttonToTranslate = (Button)findViewById(R.id.button11);
 
+
         // LinearLayout clickable
         linearLayout = (LinearLayout) findViewById(R.id.mic);
 
@@ -65,6 +66,7 @@ public class TranslationAPI extends AppCompatActivity implements TextToSpeech.On
         // Setting the Image View
 //        imageView = (ImageView) findViewById(R.id.micro);
 //        imageView.setImageResource(R.drawable.small_mic);
+
 
         buttonToTranslate.setOnClickListener(new View.OnClickListener() {
             @Override

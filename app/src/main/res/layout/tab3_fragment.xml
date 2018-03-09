@@ -1,43 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                             xmlns:app="http://schemas.android.com/apk/res-auto"
-                                             xmlns:tools="http://schemas.android.com/tools"
-                                             android:id="@+id/linearLayout3"
-                                             android:layout_width="match_parent"
-                                             android:layout_height="match_parent"
-                                             android:gravity="center"
-                                             android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/linear1"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
-        app:layout_constraintHorizontal_bias="0.55"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/general"/>
+        android:textColor="@color/primary_text"
+        android:textSize="30dp"
+        android:text="Original ------> Translated"
+        android:textStyle="bold|italic"
+        android:gravity="left"/>
 
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="wrap_content"
+</LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/linear2"
+    android:layout_below="@id/linear1"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:background="@color/primary_dark"
-        android:clickable="true"
-        android:focusable="true"
-        android:gravity="center"
-        android:padding="16dp"
-        android:text="@string/trlToRuss"
-        android:textColor="#FFFF"
-        android:textSize="22sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:textColor="@color/primary_text"
+        android:textSize="20dp"
+        android:text="Friend ------> Друг"
+
+        android:gravity="left"/>
 
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/linear3"
+    android:layout_below="@id/linear2"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/primary_text"
+        android:textSize="20dp"
+        android:text="Toilet ------> туалет"
+
+        android:gravity="left"/>
+
+
+</LinearLayout>
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/linear4"
+    android:layout_below="@id/linear3"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/primary_text"
+        android:textSize="20dp"
+        android:text="Food------> питание"
+
+        android:gravity="left"/>
+
+
+</LinearLayout>
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/linear5"
+    android:layout_below="@id/linear4"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/primary_text"
+        android:textSize="20dp"
+        android:text="Help ------> Помогите"
+
+        android:gravity="left"/>
+
+
+</LinearLayout>
+
+<TextView
+    android:id="@+id/btnSpeak"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="450dp"
+    android:textColor="@color/icons"
+    android:background="@color/primary"
+    android:clickable="true"
+    android:gravity="center"
+    android:padding="16dp"
+    android:text="Use Translation Tool"
+    android:textSize="22sp"
+
+    android:textStyle="normal"/>
+
+</RelativeLayout>
