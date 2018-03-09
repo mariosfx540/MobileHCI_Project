@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/background1"
     tools:context="com.example.dimis.mobilehci.MainActivity">
 
     <TextView
@@ -13,36 +13,54 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="@color/colorPrimary"
+        android:background="@color/icons"
         android:clickable="true"
         android:gravity="center"
         android:padding="16dp"
         android:text="Tap to Open Mic"
-        android:textColor="@color/colorAccent"
         android:textSize="22sp"
-        android:textStyle="normal" />
+        android:layout_marginTop="20dp"
+        android:textStyle="normal"
+        android:textColor="#212121"/>
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="71dp"
-        android:layout_marginStart="71dp"
-        android:layout_marginTop="105dp"
-        android:ems="10"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/button11"
+        android:layout_marginBottom="15dp"
         android:inputType="textMultiLine"
-        android:text="Input Text For Translation" />
+        android:text="Input Text "
+        android:padding="10dp"
+        android:background="@drawable/rounded_corners"
+        android:gravity="top"
+        android:textColor="@color/secondary_text" />
 
     <Button
         android:id="@+id/button11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/btnSpeak"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="94dp"
-        android:text="Translate" />
+        android:layout_marginBottom="15dp"
+        android:layout_above="@id/textView1"
+        android:background="@drawable/round"
+        android:text=""
+        />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_above="@+id/btnOpen"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/rounded_corners"
+        android:layout_centerHorizontal="true"
+        android:text="Results"
+        android:padding="10dp"
+        android:textColor="@color/secondary_text"
+        android:textSize="18sp"/>
+
+
 
 </RelativeLayout>

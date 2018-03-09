@@ -30,24 +30,26 @@ public class TranslationAPI extends AppCompatActivity {
     private static final String API_KEY = "AIzaSyDW3LMH2K_d_6YP0jghp72042rgj-XMxPs";
     private static final String TAG = "TranslationAPI";
     private Button buttonToTranslate;
-    private EditText InputText;
+    private static EditText InputText;
     private final int REQ_CODE_SPEECH_INPUT = 100;
     private TextView textView;
+    private static TextView textView1;
+    private static Handler textViewHandler= new Handler();
 
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.translate_screen);
-
+        textView1 = (TextView)findViewById(R.id.textView1);
         textView = (TextView)findViewById(R.id.btnOpen);
         InputText = (EditText)findViewById(R.id.editText);
         buttonToTranslate = (Button)findViewById(R.id.button11);
-        final Handler textViewHandler = new Handler();
+
         buttonToTranslate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Translate(InputText.getText().toString(),textViewHandler);
+                Translate(InputText.getText().toString());
 
 
 
@@ -78,6 +80,7 @@ public class TranslationAPI extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+
         switch (requestCode) {
             case REQ_CODE_SPEECH_INPUT: {
                 if (resultCode == RESULT_OK && null != data) {
@@ -86,13 +89,14 @@ public class TranslationAPI extends AppCompatActivity {
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
 
                     Log.d("Results",result.get(0));
+                    Translate(result.get(0));
                 }
                 break;
             }
 
         }
     }
-    public static void Translate(final String text,final Handler textViewHandler){
+    public static void Translate(final String text){
         new  AsyncTask<Void,Void,Void>(){
             @Override
             protected Void doInBackground(Void... params) {
@@ -107,7 +111,8 @@ public class TranslationAPI extends AppCompatActivity {
 
                         Log.d("Result","Text: %s%n"+ translation.getTranslatedText());
                         Log.d("Translation: %s%n", translation.getTranslatedText());
-
+                        textView1.setText(translation.getTranslatedText());
+                        InputText.setText(text);
 
                     }
                 });
