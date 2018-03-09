@@ -6,57 +6,106 @@
     android:background="@drawable/background1"
     tools:context="com.example.dimis.mobilehci.MainActivity">
 
-    <TextView
-        android:id="@+id/btnOpen"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:background="@color/icons"
+        android:id="@+id/mic"
+        android:background="#FFFFFF"
         android:clickable="true"
-        android:gravity="center"
-        android:padding="16dp"
-        android:text="Tap to Open Mic"
-        android:textSize="22sp"
-        android:layout_marginTop="20dp"
-        android:textStyle="normal"
-        android:textColor="#212121"/>
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/btnOpen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/icons"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="Use Mic"
+            android:textSize="22sp"
+            android:textStyle="normal"
+            android:textColor="#212121"/>
+
+        <ImageView
+            android:id="@+id/micro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/mic_24"
+            android:layout_gravity="center"
+            />
+
+    </LinearLayout>
+
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="300dp"
         android:layout_height="150dp"
         android:layout_centerHorizontal="true"
-        android:layout_above="@id/button11"
-        android:layout_marginBottom="15dp"
         android:inputType="textMultiLine"
-        android:text="Input Text "
+        android:hint="Input Text"
         android:padding="10dp"
         android:background="@drawable/rounded_corners"
         android:gravity="top"
-        android:textColor="@color/secondary_text" />
+        android:textColor="@color/secondary_text"
+        android:layout_marginTop="20dp"/>
 
-    <Button
-        android:id="@+id/button11"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="15dp"
-        android:layout_above="@id/textView1"
-        android:background="@drawable/round"
-        android:text=""
-        />
+    <LinearLayout
+        android:id="@+id/buttons_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_below="@id/editText"
+        android:layout_above="@id/textView1">
+
+        <ImageView
+            android:id="@+id/england_img"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/england"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="30dp"/>
+
+        <Button
+            android:id="@+id/button11"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/round"
+            android:text="" />
+
+        <Button
+            android:id="@+id/btnSpeak"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:background="@drawable/round_ear"
+            android:text="" />
+
+        <ImageView
+            android:id="@+id/russian_img"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/russia"/>
+
+    </LinearLayout>
+
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="300dp"
         android:layout_height="150dp"
-        android:layout_above="@+id/btnOpen"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/rounded_corners"
         android:layout_centerHorizontal="true"
-        android:text="Results"
+        android:layout_above="@id/mic"
+        android:hint="Results"
         android:padding="10dp"
         android:textColor="@color/secondary_text"
         android:textSize="18sp"/>
