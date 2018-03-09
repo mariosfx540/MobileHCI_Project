@@ -40,26 +40,15 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                askSpeechInput();
+                Intent intent = new Intent(MainActivity.this,TranslationAPI.class);
+                startActivity(intent);
             }
         });
 
         mDialog = new Dialog(this);
 
     }
-    private void askSpeechInput() {
-        Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
-        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
-                RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
-        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
-        intent.putExtra(RecognizerIntent.EXTRA_PROMPT,
-                "Hi speak something");
-        try {
-            startActivityForResult(intent, REQ_CODE_SPEECH_INPUT);
-        } catch (ActivityNotFoundException a) {
 
-        }
-    }
 
 
     @Override
@@ -68,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         inflater.inflate(R.menu.main_menu,menu);
         return  true;
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -78,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
 
                     ArrayList<String> result = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-
                     Log.d("kokos",result.get(0));
                 }
                 break;
@@ -111,4 +100,5 @@ public class MainActivity extends AppCompatActivity {
         mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         mDialog.show();
     }
+
 }

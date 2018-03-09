@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:textColor="@color/icons"
-        android:text="Choose your Country"
+        android:text="Teams"
         android:textStyle="bold"
         android:gravity="center"/>
 
