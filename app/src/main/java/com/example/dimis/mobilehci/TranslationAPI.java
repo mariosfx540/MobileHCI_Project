@@ -1,5 +1,6 @@
 package com.example.dimis.mobilehci;
 
+import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -14,12 +15,14 @@ import com.google.cloud.translate.TranslateOptions;
 import com.google.cloud.translate.Translation;
 
 import android.util.Log;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -88,6 +91,17 @@ public class TranslationAPI extends AppCompatActivity implements TextToSpeech.On
                 speakOut();
             }
         });
+
+        InputText.setOnFocusChangeListener(new View.OnFocusChangeListener(){
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    hideKeyboard(v);
+                }
+            }
+        });
+
+
     }
 
 
@@ -190,6 +204,10 @@ public class TranslationAPI extends AppCompatActivity implements TextToSpeech.On
         } else {
             Log.e("TTS", "Initilization Failed!");
         }
+    }
+    public void hideKeyboard(View view) {
+        InputMethodManager inputMethodManager =(InputMethodManager)getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 }
 

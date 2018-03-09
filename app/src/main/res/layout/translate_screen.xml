@@ -4,8 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background1"
-    tools:context="com.example.dimis.mobilehci.MainActivity">
-
+    tools:context="com.example.dimis.mobilehci.MainActivity"
+    android:clickable="true"
+    android:focusableInTouchMode="true">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -50,7 +51,8 @@
         android:background="@drawable/rounded_corners"
         android:gravity="top"
         android:textColor="@color/secondary_text"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:imeOptions="actionDone"/>
 
     <LinearLayout
         android:id="@+id/buttons_id"
