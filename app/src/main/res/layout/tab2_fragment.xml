@@ -1,107 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:stretchColumns="*">
-<TableRow>
+android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/linear1"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/primary_text"
         android:textSize="30dp"
-        android:text="Original"
+        android:text="Original ------> Translated"
         android:textStyle="bold|italic"
-        android:gravity="center"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/primary_text"
-        android:textSize="30dp"
-        android:text="Translated"
-        android:textStyle="bold|italic"
-        android:gravity="center"/>
-</TableRow>
+        android:gravity="left"/>
 
-<TableRow>
+</LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/linear2"
+    android:layout_below="@id/linear1"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/primary_text"
         android:textSize="20dp"
-        android:text="Idiot"
-        android:gravity="center"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/primary_text"
-        android:textSize="20dp"
-        android:text="идиот"
-        android:gravity="center"/>
-</TableRow>
+        android:text="Idiot ------> идиот"
 
-<TableRow>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/primary_text"
-        android:textSize="20dp"
-        android:text="Darn"
-        android:gravity="center"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/primary_text"
-        android:textSize="20dp"
-        android:text="штопать"
-        android:gravity="center"/>
-</TableRow>
+        android:gravity="left"/>
 
-<TableRow>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/primary_text"
-        android:textSize="20dp"
-        android:text="Son of a Gun"
-        android:gravity="center"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/primary_text"
-        android:textSize="20dp"
-        android:text="Сын оружия"
-        android:gravity="center"/>
-</TableRow>
 
-<TableRow>
+</LinearLayout>
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/linear3"
+    android:layout_below="@id/linear2"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/primary_text"
         android:textSize="20dp"
-        android:text="Douche"
-        android:gravity="center"/>
+        android:text="Darn ------> штопать"
+
+        android:gravity="left"/>
+
+
+</LinearLayout>
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/linear4"
+    android:layout_below="@id/linear3"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/primary_text"
         android:textSize="20dp"
-        android:text="Душ"
-        android:gravity="center"/>
-</TableRow>
+        android:text="Son of a Gun ------> Сын оружия"
+
+        android:gravity="left"/>
+
+
+</LinearLayout>
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/linear5"
+    android:layout_below="@id/linear4"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
     <TextView
-        android:id="@+id/btnSpeak"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
-        android:textColor="@color/icons"
-        android:background="@color/primary"
-        android:clickable="true"
-        android:gravity="center"
-        android:padding="16dp"
-        android:text="Use Translation Tool"
-        android:textSize="22sp"
+        android:textColor="@color/primary_text"
+        android:textSize="20dp"
+        android:text="Douche ------> Душ"
 
-        android:textStyle="normal"/>
+        android:gravity="left"/>
 
-</TableLayout>
+
+</LinearLayout>
+
+<TextView
+    android:id="@+id/btnSpeak"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="450dp"
+    android:textColor="@color/icons"
+    android:background="@color/primary"
+    android:clickable="true"
+    android:gravity="center"
+    android:padding="16dp"
+    android:text="Use Translation Tool"
+    android:textSize="22sp"
+
+    android:textStyle="normal"/>
+
+</RelativeLayout>

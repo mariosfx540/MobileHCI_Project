@@ -1,104 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/linear1"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary_text"
+                android:textSize="30dp"
+                android:text="Original ------> Translated"
+                android:textStyle="bold|italic"
+                android:gravity="left"/>
 
-    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/linear2"
+                    android:layout_below="@id/linear1"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primary_text"
+                    android:textSize="20dp"
+                    android:text="Hello ------> Здравствуйте"
+
+                    android:gravity="left"/>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/linear3"
+                android:layout_below="@id/linear2"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary_text"
+                android:textSize="20dp"
+                android:text="Good Night ------> доброй ночи"
+
+                android:gravity="left"/>
+
+
+        </LinearLayout>
+
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:stretchColumns="*">
-        <TableRow>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/primary_text"
-                android:textSize="30dp"
-                android:text="Original"
-                android:textStyle="bold|italic"
-                android:gravity="center"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/primary_text"
-                android:textSize="30dp"
-                android:text="Translated"
-                android:textStyle="bold|italic"
-                android:gravity="center"/>
-        </TableRow>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/linear4"
+        android:layout_below="@id/linear3"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/primary_text"
+            android:textSize="20dp"
+            android:text="Thank you ------> Спасибо"
 
-        <TableRow>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/primary_text"
-                android:textSize="20dp"
-                android:text="Hello"
-                android:gravity="center"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/primary_text"
-                android:textSize="20dp"
-                android:text="Здравствуйте"
-                android:gravity="center"/>
-        </TableRow>
-
-        <TableRow>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/primary_text"
-                android:textSize="20dp"
-                android:text="Good Night"
-                android:gravity="center"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/primary_text"
-                android:textSize="20dp"
-                android:text="доброй ночи"
-                android:gravity="center"/>
-        </TableRow>
-
-        <TableRow>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/primary_text"
-                android:textSize="20dp"
-                android:text="Thank you"
-                android:gravity="center"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/primary_text"
-                android:textSize="20dp"
-                android:text="Спасибо"
-                android:gravity="center"/>
-        </TableRow>
-
-        <TableRow>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/primary_text"
-                android:textSize="20dp"
-                android:text="Good Morning"
-                android:gravity="center"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/primary_text"
-                android:textSize="20dp"
-                android:text="доброе утро"
-                android:gravity="center"/>
-
-        </TableRow>
+            android:gravity="left"/>
 
 
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/linear5"
+        android:layout_below="@id/linear4"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/primary_text"
+            android:textSize="20dp"
+            android:text="Good Morning ------> доброе утро"
+
+            android:gravity="left"/>
+
+
+    </LinearLayout>
 
             <TextView
                 android:id="@+id/btnSpeak"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="300dp"
+                android:layout_marginTop="450dp"
                 android:textColor="@color/icons"
                 android:background="@color/primary"
                 android:clickable="true"
@@ -109,10 +117,7 @@
 
                 android:textStyle="normal"/>
 
-
-
-
-</TableLayout>
+</RelativeLayout>
 
 
 
