@@ -89,8 +89,30 @@
                 android:textSize="20dp"
                 android:text="доброе утро"
                 android:gravity="center"/>
+
         </TableRow>
 
-    </TableLayout>
+
+
+            <TextView
+                android:id="@+id/btnSpeak"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="300dp"
+                android:textColor="@color/icons"
+                android:background="@color/primary"
+                android:clickable="true"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="Use Translation Tool"
+                android:textSize="22sp"
+
+                android:textStyle="normal"/>
+
+
+
+
+</TableLayout>
+
 
 

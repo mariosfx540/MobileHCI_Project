@@ -45,6 +45,14 @@ public class TranslationAPI extends AppCompatActivity {
         InputText = (EditText)findViewById(R.id.editText);
         buttonToTranslate = (Button)findViewById(R.id.button11);
 
+
+        InputText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                InputText.setText("");
+            }
+        });
+
         buttonToTranslate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
