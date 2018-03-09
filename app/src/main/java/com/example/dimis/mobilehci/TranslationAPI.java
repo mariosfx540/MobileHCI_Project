@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.speech.RecognizerIntent;
+import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import com.google.cloud.translate.Translate;
@@ -16,6 +17,8 @@ import android.util.Log;
 import android.widget.EditText;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -25,7 +28,14 @@ import java.util.Locale;
  * Created by Dimis on 07/03/2018.
  */
 
-public class TranslationAPI extends AppCompatActivity {
+public class TranslationAPI extends AppCompatActivity implements TextToSpeech.OnInitListener{
+
+    private TextToSpeech textToSpeech;
+    private Button btnSpeak;
+    private EditText txtText;
+    private LinearLayout linearLayout;
+
+    private ImageView imageView;
 
     private static final String API_KEY = "AIzaSyDW3LMH2K_d_6YP0jghp72042rgj-XMxPs";
     private static final String TAG = "TranslationAPI";
@@ -41,36 +51,58 @@ public class TranslationAPI extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.translate_screen);
         textView1 = (TextView)findViewById(R.id.textView1);
-        textView = (TextView)findViewById(R.id.btnOpen);
+        //textView = (TextView)findViewById(R.id.btnOpen);
         InputText = (EditText)findViewById(R.id.editText);
         buttonToTranslate = (Button)findViewById(R.id.button11);
 
 
-        InputText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                InputText.setText("");
-            }
-        });
+        // LinearLayout clickable
+        linearLayout = (LinearLayout) findViewById(R.id.mic);
+
+        // setting the text-to-speech functionality
+        textToSpeech = new TextToSpeech(this, this);
+        btnSpeak = (Button) findViewById(R.id.btnSpeak);
+
+        // Setting the Image View
+//        imageView = (ImageView) findViewById(R.id.micro);
+//        imageView.setImageResource(R.drawable.small_mic);
+
 
         buttonToTranslate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Translate(InputText.getText().toString());
-
-
-
             }
         });
-        textView.setOnClickListener(new View.OnClickListener() {
+
+        linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 askSpeechInput();
             }
         });
 
+        btnSpeak.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                speakOut();
+            }
+        });
     }
+
+
+    // Shut down textToSpeech
+    @Override
+    public void onDestroy() {
+        // Don't forget to shutdown tts!
+        if (textToSpeech != null) {
+            textToSpeech.stop();
+            textToSpeech.shutdown();
+        }
+        super.onDestroy();
+    }
+
+
     private void askSpeechInput() {
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
@@ -84,6 +116,13 @@ public class TranslationAPI extends AppCompatActivity {
 
         }
     }
+
+    private void speakOut(){
+        String text = textView1.getText().toString();
+        textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+    }
+
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -132,6 +171,25 @@ public class TranslationAPI extends AppCompatActivity {
 
 
 
+    }
+
+    @Override
+    public void onInit(int status) {
+        if (status == TextToSpeech.SUCCESS) {
+
+            int result = textToSpeech.setLanguage(new Locale("ru"));
+
+            if (result == TextToSpeech.LANG_MISSING_DATA
+                    || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                Log.e("TTS", "This Language is not supported");
+            } else {
+                btnSpeak.setEnabled(true);
+                speakOut();
+            }
+
+        } else {
+            Log.e("TTS", "Initilization Failed!");
+        }
     }
 }
 
