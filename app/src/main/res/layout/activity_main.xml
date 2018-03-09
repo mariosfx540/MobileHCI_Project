@@ -21,8 +21,9 @@
             android:layout_height="match_parent"
             android:textColor="@color/icons"
             android:textStyle="bold"
+
             android:textSize="30dp"
-            android:text="Choose your team's group"
+            android:text="Choose group"
             android:layout_gravity="center"
             android:gravity="center"
             />
@@ -160,7 +161,7 @@
 
         <TextView
             android:id="@+id/btnSpeak"
-            android:layout_width="398dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:textColor="#212121"
@@ -168,8 +169,11 @@
             android:clickable="true"
             android:gravity="center"
             android:padding="16dp"
-            android:text="Translate to Russian"
+            android:text="@string/trlToRuss"
             android:textSize="22sp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:textStyle="normal"/>
     </LinearLayout>
 
