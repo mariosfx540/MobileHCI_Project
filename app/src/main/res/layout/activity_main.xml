@@ -21,6 +21,7 @@
             android:layout_height="match_parent"
             android:textColor="@color/icons"
             android:textStyle="bold"
+
             android:textSize="30dp"
             android:text="Choose group"
             android:layout_gravity="center"
@@ -168,7 +169,7 @@
             android:clickable="true"
             android:gravity="center"
             android:padding="16dp"
-            android:text="Translate to Russian"
+            android:text="@string/trlToRuss"
             android:textSize="22sp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
